@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Role-Based Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div id="loginSection" class="panel active">
+                <h1>Login Form</h1>
+                <p class="subtitle">Enter your username and choose your role</p>
+
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter username" maxlength="20">
+
+                <div class="button-group">
+                    <button class="admin-btn" type="button" data-role="Admin">
+                        Login as Admin
+                    </button>
+                    <button class="viewer-btn" type="button" data-role="Viewer">
+                        Login as Viewer
+                    </button>
+                </div>
+
+                <p id="errorMessage" class="error" aria-live="polite"></p>
+            </div>
+
+            <div id="welcomeSection" class="panel hidden" aria-live="polite">
+                <div class="welcome-header">
+                    <h1 id="welcomeMessage"></h1>
+                    <span id="roleBadge" class="role-badge"></span>
+                </div>
+
+                <div id="adminContent" class="role-panel admin-panel hidden">
+                    <h2>Admin Panel</h2>
+                    <p class="panel-note">You have full administrative control.</p>
+
+                    <div class="post-preview">
+                        <h3>Sample Post</h3>
+                        <p>Team update: The new dashboard is ready for review and approval.</p>
+                    </div>
+
+                    <button class="delete-btn" type="button">Delete Post</button>
+                    <p id="deleteMessage" class="success" aria-live="polite"></p>
+                </div>
+
+                <div id="viewerContent" class="role-panel viewer-panel hidden">
+                    <h2>Viewer Panel</h2>
+                    <p class="panel-note">Read-only access</p>
+
+                    <div class="read-only-box">
+                        <span class="lock-icon">🔒</span>
+                        <p>You can only view content in this mode.</p>
+                    </div>
+                </div>
+
+                <button class="logout-btn" type="button">Logout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
